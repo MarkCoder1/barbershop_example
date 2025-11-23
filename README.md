@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Sharp Edge Barbershop Showcase
 
-## Getting Started
+This is a showcase barbershop website built with the Next.js App Router. It includes:
 
-First, run the development server:
+- Hero landing page with services overview
+- Responsive navigation & footer
+- Image gallery (placeholder Unsplash images – replace with your own)
+- Contact page (address, hours, map placeholder)
+- Booking form with in‑memory API route (`/api/book`)
+
+> NOTE: Bookings are stored only in memory and will reset on each restart or deployment. Integrate a database (e.g. Prisma + PostgreSQL) or email service for production use.
+
+### Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+	page.tsx          # Home (hero + services)
+	gallery/page.tsx  # Gallery
+	book/page.tsx     # Booking page
+	contact/page.tsx  # Contact info
+	api/book/route.ts # Booking API
+	components/       # Reusable UI pieces
+```
 
-## Learn More
+### Customization
 
-To learn more about Next.js, take a look at the following resources:
+- Replace Unsplash image URLs with local images in `public/` or your own remote assets.
+- Add a DB: create a Prisma schema, replace in‑memory array in `api/book/route.ts`.
+- Email notifications: integrate Resend / Nodemailer in the POST handler.
+- Map: drop a real Google Maps iframe into the placeholder div in `contact/page.tsx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Tailwind CSS v4 is used via `@import "tailwindcss";` with custom utility classes in `globals.css` (`btn-primary`, `form-input`, etc.).
 
-## Deploy on Vercel
+### Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy easily on Vercel. Set environment variables (DB URL, email API keys) once you add integrations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Next Steps (Suggested Enhancements)
+
+- Service detail pages
+- Reviews/testimonials section
+- Authentication for managing bookings
+- Dashboard to confirm/cancel appointments
+
+### License
+
+Showcase only – adapt freely for your own shop. Remove placeholder data before production.
