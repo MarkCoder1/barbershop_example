@@ -13,7 +13,7 @@ export default function GalleryPage() {
         <Link href="/book" className="btn-primary text-sm">Book Now</Link>
       </div>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl text-sm leading-relaxed">
-        A glimpse into our craft — fades, trims, shaves & details. All images are inspirational placeholders from Unsplash; replace with your own shots for production.
+        A glimpse into our craft — fades, trims, shaves & details. All images are inspirational placeholders .
       </p>
       <GalleryGrid />
     </div>
